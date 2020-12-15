@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.1.1.min.js" integrity="sha384-kLr4fYcqcSpbuI95brIH3vnnYCquzzSxHPU6XGQCIkQRGJwhg0StNbj1eegrHs12" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="274f69ad-3dd8-4b99-99df-8064c48be63a" data-root-id="11430"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="11616">
+          {"51d06221-fba8-4513-ac88-bbec9fb5fa32":{"roots":{"references":[{"attributes":{"axis_label":"Age of the victim","formatter":{"id":"11457"},"ticker":{"id":"11442"}},"id":"11441","type":"CategoricalAxis"},{"attributes":{},"id":"11457","type":"CategoricalTickFormatter"},{"attributes":{"below":[{"id":"11441"}],"center":[{"id":"11443"},{"id":"11447"}],"left":[{"id":"11444"}],"plot_height":300,"plot_width":800,"renderers":[{"id":"11452"}],"title":{"id":"11431"},"toolbar":{"id":"11448"},"toolbar_location":null,"x_range":{"id":"11433"},"x_scale":{"id":"11437"},"y_range":{"id":"11435"},"y_scale":{"id":"11439"}},"id":"11430","subtype":"Figure","type":"Plot"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#543EAC"},"line_alpha":{"value":0.1},"line_color":{"value":"white"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"11451","type":"VBar"},{"attributes":{"source":{"id":"11449"}},"id":"11453","type":"CDSView"},{"attributes":{"start":0},"id":"11435","type":"DataRange1d"},{"attributes":{"formatter":{"id":"11455"},"ticker":{"id":"11445"}},"id":"11444","type":"LinearAxis"},{"attributes":{"data":{"top":[19,292,429,229,147,55,15],"x":["(0.0, 10.0]","(10.0, 20.0]","(20.0, 30.0]","(30.0, 40.0]","(40.0, 50.0]","(50.0, 60.0]","(60.0, inf]"]},"selected":{"id":"11460"},"selection_policy":{"id":"11459"}},"id":"11449","type":"ColumnDataSource"},{"attributes":{"axis":{"id":"11441"},"grid_line_color":null,"ticker":null},"id":"11443","type":"Grid"},{"attributes":{"data_source":{"id":"11449"},"glyph":{"id":"11450"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"11451"},"selection_glyph":null,"view":{"id":"11453"}},"id":"11452","type":"GlyphRenderer"},{"attributes":{},"id":"11459","type":"UnionRenderers"},{"attributes":{},"id":"11439","type":"LinearScale"},{"attributes":{"axis":{"id":"11444"},"dimension":1,"ticker":null},"id":"11447","type":"Grid"},{"attributes":{"text":"Harassment Reports per Age"},"id":"11431","type":"Title"},{"attributes":{},"id":"11460","type":"Selection"},{"attributes":{},"id":"11442","type":"CategoricalTicker"},{"attributes":{"factors":["(0.0, 10.0]","(10.0, 20.0]","(20.0, 30.0]","(30.0, 40.0]","(40.0, 50.0]","(50.0, 60.0]","(60.0, inf]"]},"id":"11433","type":"FactorRange"},{"attributes":{},"id":"11445","type":"BasicTicker"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto"},"id":"11448","type":"Toolbar"},{"attributes":{"fill_color":{"value":"#543EAC"},"line_color":{"value":"white"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"11450","type":"VBar"},{"attributes":{},"id":"11455","type":"BasicTickFormatter"},{"attributes":{},"id":"11437","type":"CategoricalScale"}],"root_ids":["11430"]},"title":"Bokeh Application","version":"2.1.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('11616').textContent;
+                  var render_items = [{"docid":"51d06221-fba8-4513-ac88-bbec9fb5fa32","root_ids":["11430"],"roots":{"11430":"274f69ad-3dd8-4b99-99df-8064c48be63a"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

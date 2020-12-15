@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Sexual Violence in Mexico City</title>
+
+
+        <!--Styles-->
+
+        <!-- Mapbox -->
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gentium+Basic&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+
+        <!-- Dropdown -->
+        <style>
+          .collapsible {
+            background-color: #4C4C4C;
+            color: white;
+            cursor: pointer;
+            padding: 18px 24px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            z-index: 1;
+
+            height: 72px;
+          }
+
+          .collapsible2 {
+            background-color: #543EAC;
+            color: white;
+            cursor: pointer;
+            padding: 18px 24px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            z-index: 1;
+
+          }
+
+          .collapsible3 {
+            background-color: #C049A1;
+            color: white;
+            cursor: pointer;
+            padding: 18px 24px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            z-index: 1;
+
+          }
+
+          .collapsible4 {
+            background-color: #171953;
+            color: white;
+            cursor: pointer;
+            padding: 18px 24px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            z-index: 1;
+
+          }
+
+
+          .active, .collapsible:hover {
+            background-color: #555;
+          }
+
+          .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: transparent;
+          }
+
+          .content p {
+            font-family: Gentium, serif;
+            color: #FFFFFF
+          }
+
+          .content2 {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #543EAC;
+            color: white;
+            opacity: 70%;
+          }
+
+          .content3 {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #C049A1;
+            color: white;
+            opacity: 90%;
+          }
+
+          .content4 {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #171953;
+            color: white;
+            opacity: 70%;
+          }
+
+          .button1 {
+            background-color: #edd3f5;
+            border: none;
+            color: #543EAC;
+            width:100%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: 4px 2px;
+            cursor: pointer;
+          }
+          .button2 {
+            background-color: #edd3f5;
+            border: none;
+            color: #C049A1;
+            width:100%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: 4px 2px;
+            cursor: pointer;
+
+          }
+          .button3 {
+            background-color: #edd3f5;
+            border: none;
+            color: #171953;
+            width:100%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: 4px 2px;
+            cursor: pointer;
+
+          }
+          .diagram {
+            display: none;
+          }
+          .age {
+            display: none;
+          }
+          .time {
+            display: none;
+          }
+          .gender {
+            display: none;
+          }
+          .month {
+            display: none;
+          }
+
+          #diagramtitle{
+            padding: 18px 0px;
+            color:white;
+          }
+
+
+          /* Clear floats after the columns */
+			.row:after {
+			  content: "";
+			  display: table;
+			  clear: both;
+			}
+        /*Narrative panel*/
+        .narrative{
+          background-color: #4C4C4C;
+          padding: 0% 10%;
+          top:40%;
+        }
+        .narrative_content1{
+          font-family: Gentium, serif;
+          color:#C049A1;
+          position: relative;
+          top:40%;
+          text-align: center;
+          background-color: #4C4C4C;
+          font-size: 2vw;
+        }
+
+        .narrative_content2{
+          font-family: Gentium, serif;
+          color:#edd3f5;
+          position: relative;
+          top:15%;
+          text-align: center;
+          background-color: #4C4C4C;
+          font-size: 2vw;
+        }
+        .narrative_content3{
+          font-family: Gentium, serif;
+          color:white;
+          position: relative;
+          top:20%;
+          text-align: center;
+          background-color: #4C4C4C;
+          font-size: 2vw;
+        }
+
+        .first_appearopacity, .third_appearopacity, .fifth_appearopacity{
+          opacity: 0;
+          transition: opacity 0.8s;
+          -webkit-transition: opacity 0.8s;
+        }
+
+        .second_appearopacity, .fourth_appearopacity, .sixth_appearopacity{
+          opacity: 0;
+          transition: opacity 2s;
+          -webkit-transition: opacity 2s;
+        }
+        .active{
+          opacity:1;
+        }
+
+        </style>
+
+        <!-- Scripts -->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+
+<!--Page -->
+    </head>
+    <body id="page-top">
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="my-0 text-uppercase text-center">Sexual  <br>  Violence</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Mexico City 2019</h2>
+                  <a class="btn btn-primary js-scroll-trigger" href="#second-window">Explore the Reports</a>
+                </div>
+
+            </div>
+        </header>
+
+        <section class="narrative">
+          <div class="row">
+            <div class="col-5">
+              <h2 class="text-center narrative_content1 first_appearopacity" id="first_appear">In 2017, Mexico City was declared the 4th most dangerous city for women regarding sexual violence. 
+              </h2>
+            </div>
+            <div class="col-7">
+              <img src="glitter_revolution.jpeg" width="100%" height="auto" id="second_appear" class="second_appearopacity" style="margin:50px;">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-7">
+              <img src="justicia.png" width="100%" height="auto" id="fourth_appear" class="fourth_appearopacity" style="margin:50px 0px;">
+            </div>
+            <div class="col-5">
+              <h2 class="text-center narrative_content2 third_appearopacity" id="third_appear">
+                Street harassment is often incomplete as abuse goes unrreported. For many, the fear of retaliation, worry of further harasssment by police, and more, mean that many are silenced.
+                <br><br>
+                Yet this is the data that will drive policy and municipal budget and legislation. 
+              </h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-5">
+              <h2 class="text-center narrative_content3 fifth_appearopacity" id="fifth_appear">
+                This data is from the 2019 reports on sexual violence from the research files of the General Prosecutor of Justice (Fiscalía General de Justicia) of Mexico City. We ask all users to use this information cautiously. 
+                <br><br>
+                Bare in mind that there are many cases that go unreported, that never make it to the map.
+              </h2>
+            </div>
+            <div class="col-7">
+              <img src="protest.jpeg" width="100%" height="auto" id="sixth_appear" class="sixth_appearopacity" style="margin:50px 0px;">
+            </div>
+        </section>
+
+        <!-- Map & Text  -->
+        <section class="about-section-reverse-gradient"> <!-- TODO: change class to not be named "map" use for map div-->
+            <div class="row" id='second-window' >
+                <div class="column"> <!-- TODO: change class -->
+                    <div class="col-lg-8 mx-auto">
+                        <div>
+                          <!-- Menu -->
+                          <nav id="menu">
+                            <button type="button" class="collapsible"><i class="fa fa-angle-right" aria-hidden="true"></i>Are women safe in Mexico City?</button>
+                            <div class="content">
+                                <p class= >    In 2017, the Thomas Reuters Foundation published a poll portraying Mexico City as the 4th most dangerous city for women regarding sexual violence, which was defined as “rape or sexual attacks and harassment.” Figures representing violence against women have been increasing since that year. In the first ten months of 2019, 50 feminicides were recorded in Mexico City (Infobae, 2019). On November 25th, the International Day for the Elimination of Violence against Women, almost 3,000 participants marched under the theme “Not One Woman Less” (Ni Una Menos) in demand for the government to address women’s safety as an urgent matter. On February of this year, the feminicides of the 25-year-old Íngrid Escamilla and the 7-year-old Fátima Cecilia Aldrighett, triggered feminist collectives’ –and thousands of women’s –frustration towards how the system is failing to protect them. Daily demonstrations in Mexico City’s most iconic public plazas took place. On March 9th, a day after the International Women’s day, Mexican women took a different approach to their protests by declaring “A Day Without Women.” This demonstration sought to portray how empty Mexico City’s public spaces would look by asking women to stay home for one day. This silent protest elucidates the importance of women’s right to the city –a right which is being hampered by fear due to this pervasive climate of harassment and violence against women. Women in Mexico City are not safe, they are continuously vulnerable to sexual harassment and abuse.
+                                </p>
+                            </div>
+                            <button type="button" class="collapsible"><i class="fa fa-angle-right" aria-hidden="true"></i>Why is women’s safety important?</button>
+                            <div class="content">
+                                <p class=>    Sexual abuse and harassment is an issue that affects women in a much higher rate than men. Women must live with fear of violence against them. This fear of violence constitutes a constant state of alert not only to the most vicious forms of gendered violence –rape and feminicide –but to the smaller and more subtle modes of harassment which exist in a continuity in space as a woman travels throughout the city. It is the gestures, the catcalls, the pursuing, and the groping of women in public space which makes them feel vulnerable and uncomfortable. Fear of violence obliges women to be wary when using the city, forcing them to avoid certain areas when possible and hindering their right to the city.
+                                Policies and design usually follow findings from aggregated data. In the case of transport, for instance, when data about travel patterns is aggregated, the most common route is commuting. However, if this data is disaggregated, women’s travel patterns are revealed as much more complex than men’s. This is what Inés Sanchez de Madariaga calls ‘mobility of care’, which elucidates the complexity of women’s use of the city, while not only working but also taking care of family members and the household. This is why we need to understand women’s experience of the city and design inclusively for women too. It is only by acknowledging their needs that they will recover their right to the city.
+                                </p>
+                            </div>
+                            <button type="button" class="collapsible"><i class="fa fa-angle-right" aria-hidden="true"></i>What is the data telling us?</button>
+                            <div class="content">
+                              <p class=>    The data on the map shows the reports in 2019 in the research files of the General Prosecutor of Justice (Fiscalía General de Justicia) of Mexico City. On this year, they received 1799 reports of sexual harassment: 1683 of these were reported by women and 108 by men. They received 7167 reports of sexual abuse: 6330 from women and 782 from men. They received 2252 reports of rape: 2046 from women and 203 from men. The data clearly shows this is an issue that impacts women in a much larger way than men.
+                              Also, the data has revealed that women between 10 and 20 years old are more likely to be victims of sexual harassment. However, the data shows this is an issue that affects women of all ages. In 2019 there were harassment reports from women from the age of 2 to the age of 79; abuse reports  from he age of 1 to the age of 79; and rape reports from the age of  2 to the age of 90 years old.
+                              Regarding whether the assaults occur during daylight or at night time, it is interesting to note how more reports on sexual harassment and abuse indicate the crime occured during day light, however most rape cases took place in the night.
+                              </p>
+                            </div>
+                            <button type="button" class="collapsible"><i class="fa fa-angle-right" aria-hidden="true"></i>Why does it matter what we count?</button>
+                              <div class="content">
+                                <p class=>    Official data is what informs budget allocations and policies. However, women tend to under report cases of sexual harassment and abuse because the system continues to question the validity of these cases and usually asks the victim to stay in the police office for many hours while being questioned with no psychological support. The process ends up being traumatic too. The system remains chauvinistic and abusive. This is why we encourage you to tell your story on this web page. Share what happened without being questioned. If we generate a database that comes closer to the real cases of abuse in the city, we are hoping government officials will find it harder to question the reality of the problem.
+                                </p>
+                              </div>
+                            <button type="button" class="collapsible"><i class="fa fa-angle-right" aria-hidden="true"></i>Who is not being counted?</button>
+                              <div class="content">
+                                <p class=>    Every woman who does not report does not appear on the map. Every woman who doesn’t trust the system does not show on the map. Every woman who is fearful of reporting does not show on the map. Every woman who cannot spend hours in the police’s office to report a man who tried to touch her on the bus, does not show on the map. We are missing many stories.
+                                </p>
+                              </div>
+                                <div>
+                              </div>
+                          </nav>
+                        </div>
+
+                        <div id="myDiagram" class= "diagram">
+                          <h5 id="diagramtitle">Official reports of harassment by women in 2019: </h5>
+                          <iframe src="Diagrams/harassment_gender.html" width="460" height="300" class="gender" style= "border:none" overflow= "hidden" ></iframe>
+                          <iframe src="Diagrams/harassment_age.html" width="460" height="300" class="age" style= "border:none"  overflow= "hidden" ></iframe>
+                          <iframe src="Diagrams/harassment_month.html" width="460" height="300" class="month" style= "border:none" overflow= "hidden" ></iframe>
+                          <iframe src="Diagrams/harassment_daytime.html" width="460" height="300" class="time" style= "border:none" overflow= "hidden" ></iframe>
+
+                        </div>
+                        <div id="myDiagramA" class= "diagram">
+                          <h5 id="diagramtitle">Official reports of abuse by women in 2019: </h5>
+                          <iframe src="Diagrams/abuse_gender.html" width="460" height="300" class="gender" style= "border:none" overflow= "hidden" ></iframe>
+                          <iframe src="Diagrams/abuse_age.html" width="460" height="300" class="age" style= "border:none"  overflow= "hidden" ></iframe>
+                          <iframe src="Diagrams/abuse_month.html" width="460" height="300" class="month" style= "border:none" overflow= "hidden" ></iframe>
+                          <iframe src="Diagrams/abuse_daytime.html" width="460" height="300" class="time" style= "border:none" overflow= "hidden" ></iframe>
+
+                        </div>
+
+                        <div id="myDiagramR" class= "diagram">
+                          <h5 id="diagramtitle">Official reports of rape by women in 2019: </h5>
+                          <iframe src="Diagrams/rape_gender.html" width="460" height="300" class="gender" style= "border:none" overflow= "hidden" ></iframe>
+                          <iframe src="Diagrams/rape_age.html" width="460" height="300" class="age" style= "border:none"  overflow= "hidden" ></iframe>
+                          <iframe src="Diagrams/rape_month.html" width="460" height="300" class="month" style= "border:none" overflow= "hidden" ></iframe>
+                          <iframe src="Diagrams/rape_daytime.html" width="460" height="300" class="time" style= "border:none" overflow= "hidden" ></iframe>
+                        </div>
+                </div>
+            </div>
+
+
+
+        <!-- Map Collapsibles -->
+
+
+        <div class="column mapboxgl-map" id='map' style="width: 600px; height: 900px; float: right; right:100px; z-index: 8; ">
+
+  		    <div class="row">
+
+            <div class="column_3" style = "float: right; width: 33%; z-index: 10;">
+              <button type="button" class="collapsible2" >Explore Harassment Reports</button>
+              <div class="content2">
+                <p style="padding-top: 5px">1322 reports by women in 2019. <br> <br> Definition: Someone commits sexual harassment when they repeatedly besiege a person with lust purposes, taking advantage of any circumstance which puts the victim in disadvantage, undefensedness or imminent risk.</p>
+                <div>
+                  <button class="button1" id="H_toggle" onClick="ToggleLayerH()">Hide</button>
+                  <button class="button1" onClick="displayDiagramHG()">By Gender</button>
+                  <button class="button1" onClick="displayDiagramHA()">By Age</button>
+                  <button class="button1" onClick="displayDiagramHM()">By Month</button>
+                  <button class="button1" onClick="displayDiagramHT()">By Time</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="column_3" style = "float: right; width: 33%;z-index: 10;">
+              <button type="button" class="collapsible3">Explore Abuse Reports</button>
+              <div class="content3">
+                <p style="padding-top: 5px">5264 reports by women in 2019. <br> <br> Definition: Someone commits sexual abuse when, without consent from a person and without aiming for sexual intercourse, they force a person to either observe or do a sexual act.
+                </p>
+                <div>
+                  <button class="button2" id="A_toggle" onClick="ToggleLayerA()">Hide</button>
+                  <button class="button2" onClick="displayDiagramAG()">By Gender</button>
+                  <button class="button2" onClick="displayDiagramAA()">By Age</button>
+                  <button class="button2" onClick="displayDiagramAM()">By Month</button>
+                  <button class="button2" onClick="displayDiagramAT()">By Time</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="column_3" style = "float: right; width: 33%;z-index: 10;">
+              <button type="button" class="collapsible4">Explore Rape Reports</button>
+              <div class="content4">
+                <p style="padding-top: 5px">1583 reports by women in 2019. <br> <br> Definition: Someone commits rape when through physical or moral violence they have sexual intercourse with another person without this person’s consent. </p>
+                </p>
+                <div>
+                  <button class="button3" id="R_toggle" onClick="ToggleLayerR()">Hide</button>
+                  <button class="button3" onClick="displayDiagramRG()">By Gender</button>
+                  <button class="button3" onClick="displayDiagramRA()">By Age</button>
+                  <button class="button3" onClick="displayDiagramRM()">By Month</button>
+                  <button class="button3" onClick="displayDiagramRT()">By Time</button>
+                </div>
+              </div>
+            </div>
+		      </div>
+        </div>
+        </section>
+
+        <!-- Map -->
+        <!-- script for maps and Dropdown -->
+        <!-- script for map -->
+        <script>
+        //script for scrolly
+        var controller = new ScrollMagic.Controller();
+            new ScrollMagic.Scene({triggerElement: "#first_appear"})
+              .setClassToggle(".first_appearopacity", "active")
+              .addTo(controller);
+            new ScrollMagic.Scene({triggerElement: "#second_appear"})
+              .setClassToggle(".second_appearopacity", "active")
+              .addTo(controller);
+            new ScrollMagic.Scene({triggerElement: "#third_appear"})
+              .setClassToggle(".third_appearopacity", "active")
+              .addTo(controller);
+            new ScrollMagic.Scene({triggerElement: "#fourth_appear"})
+              .setClassToggle(".fourth_appearopacity", "active")
+              .addTo(controller);
+            new ScrollMagic.Scene({triggerElement: "#fifth_appear"})
+              .setClassToggle(".fifth_appearopacity", "active")
+              .addTo(controller);
+            new ScrollMagic.Scene({triggerElement: "#sixth_appear"})
+              .setClassToggle(".sixth_appearopacity", "active")
+              .addTo(controller);
+
+        mapboxgl.accessToken = 'pk.eyJ1IjoieXVqaW5nNiIsImEiOiJja2d2bXd6OXowMXhoMnJxeHowdGU3M291In0.L3hc0wUR2zZBd5HvhyJUiA';
+
+        var map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/mapbox/light-v10',
+          zoom: 10,
+          center: [-99.155,19.434]
+        });
+
+        map.on('load', function () {
+          map.addSource('harassment', {
+            type: 'vector',
+            url: 'mapbox://yujing6.0p6dviet'
+          });
+          map.addLayer({
+            'id': 'harassment-reports',
+            'type': 'circle',
+            'source': 'harassment',
+            'source-layer': 'harassment_data-ctufpr',
+            'layout': {
+                        // make layer visible by default
+                            'visibility': 'visible'
+                        },
+            'paint': {
+                'circle-radius': 4,
+                'circle-color': '#543eac',
+                'circle-opacity': 0.7
+            }
+          });
+          map.addSource('rape', {
+            type: 'vector',
+            url: 'mapbox://yujing6.0u53gitm'
+          });
+          map.addLayer({
+            'id': 'rape-reports',
+            'type': 'circle',
+            'source': 'rape',
+            'source-layer': 'victimas-en-carpetas-de-inves-505c04',
+            'layout': {
+                        // make layer visible by default
+                            'visibility': 'visible'
+                        },
+            'paint': {
+                'circle-radius': 4,
+                'circle-color': '#171954',
+                'circle-opacity': 0.7
+            }
+          });
+          map.addSource('abuse', {
+            type: 'vector',
+            url: 'mapbox://yujing6.crwypdj4'
+          });
+          map.addLayer({
+            'id': 'abuse-reports',
+            'type': 'circle',
+            'source': 'abuse',
+            'source-layer': 'victimas-en-carpetas-de-inves-crev87',
+            'layout': {
+                        // make layer visible by default
+                            'visibility': 'visible'
+                        },
+            'paint': {
+                'circle-radius': 4,
+                'circle-color': '#c149a1',
+                'circle-opacity': 0.7
+            }
+          });
+        });
+
+
+
+
+
+        // script for info collapsibles
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+              content.style.overflow = "hidden"
+              content.style.border = "hidden"
+            } else {
+              content.style.maxHeight = "175px";
+              content.style.overflow = "scroll";
+              content.style.border = "groove";
+            }
+          });
+        }
+
+        // script for harassment collapsibles
+        var coll = document.getElementsByClassName("collapsible2");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+
+          	//console.log('clicked!')
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            }
+          });
+        }
+
+        // script for abuse collapsibles
+        var coll = document.getElementsByClassName("collapsible3");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            }
+          });
+        }
+
+        // script for rape collapsibles
+        var coll = document.getElementsByClassName("collapsible4");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            }
+          });
+        }
+
+
+      //Toggle data layers buttons
+        function ToggleLayerH(){
+            var visibility= map.getLayoutProperty('harassment-reports','visibility');
+            if (visibility==='visible'){
+                map.setLayoutProperty('harassment-reports', 'visibility','none');
+                var btn = document.getElementById('H_toggle');
+                btn.textContent="Display"
+            } else{
+                map.setLayoutProperty('harassment-reports', 'visibility','visible');
+                var btn = document.getElementById('H_toggle');
+                btn.textContent="Hide"
+            }
+        };
+        function ToggleLayerR(){
+            var visibility= map.getLayoutProperty('rape-reports','visibility');
+            if (visibility==='visible'){
+                map.setLayoutProperty('rape-reports', 'visibility','none');
+                var btn = document.getElementById('R_toggle');
+                btn.textContent="Display"
+            } else{
+                map.setLayoutProperty('rape-reports', 'visibility','visible');
+                var btn = document.getElementById('R_toggle');
+                btn.textContent="Hide"
+            }
+        };
+        function ToggleLayerA(){
+            var visibility= map.getLayoutProperty('abuse-reports','visibility');
+            if (visibility==='visible'){
+                map.setLayoutProperty('abuse-reports', 'visibility','none');
+                var btn = document.getElementById('A_toggle');
+                btn.textContent="Display"
+            } else{
+                map.setLayoutProperty('abuse-reports', 'visibility','visible');
+                var btn = document.getElementById('A_toggle');
+                btn.textContent="Hide"
+            }
+        };
+
+        //Diagram Buttons
+        var age_graph=document.getElementsByClassName("age")
+        var gender_graph=document.getElementsByClassName("gender")
+        var month_graph=document.getElementsByClassName("month")
+        var time_graph=document.getElementsByClassName("time")
+
+        var mydiagram=document.getElementById('myDiagram')
+        var mydiagramA=document.getElementById('myDiagramA')
+        var mydiagramR=document.getElementById('myDiagramR')
+
+        function displayDiagramHA(){
+          for (var i=0;i<age_graph.length;i+=1){
+              mydiagram.style.display = 'block';
+              mydiagramA.style.display = 'none';
+              mydiagramR.style.display = 'none';
+              age_graph[i].style.display='block';
+              gender_graph[i].style.display='none';
+              month_graph[i].style.display='none';
+              time_graph[i].style.display='none';
+          }
+        }
+        function displayDiagramHG(){
+          for (var i=0;i<age_graph.length;i+=1){
+              mydiagram.style.display = 'block';
+              mydiagramA.style.display = 'none';
+              mydiagramR.style.display = 'none';
+              age_graph[i].style.display='none';
+              gender_graph[i].style.display='block';
+              month_graph[i].style.display='none';
+              time_graph[i].style.display='none';
+          }
+        }
+        function displayDiagramHM(){
+          for (var i=0;i<age_graph.length;i+=1){
+              mydiagram.style.display = 'block';
+              mydiagramA.style.display = 'none';
+              mydiagramR.style.display = 'none';
+              month_graph[i].style.display='block';
+              age_graph[i].style.display='none';
+              gender_graph[i].style.display='none';
+              time_graph[i].style.display='none';
+          }
+        }
+
+      function displayDiagramHT(){
+        for (var i=0;i<age_graph.length;i+=1){
+            mydiagram.style.display = 'block';
+            mydiagramA.style.display = 'none';
+            mydiagramR.style.display = 'none';
+            month_graph[i].style.display='none';
+            age_graph[i].style.display='none';
+            gender_graph[i].style.display='none';
+            time_graph[i].style.display='block';
+        }
+      }
+
+        function displayDiagramAA(){
+          for (var i=0;i<age_graph.length;i+=1){
+              mydiagram.style.display = 'none';
+              mydiagramA.style.display = 'block';
+              mydiagramR.style.display = 'none';
+              age_graph[1].style.display='block';
+              gender_graph[i].style.display='none';
+              month_graph[i].style.display='none';
+              time_graph[i].style.display='none';
+          }
+        }
+        function displayDiagramAG(){
+          for (var i=0;i<age_graph.length;i+=1){
+              mydiagram.style.display = 'none';
+              mydiagramA.style.display = 'block';
+              mydiagramR.style.display = 'none';
+              age_graph[i].style.display='none';
+              gender_graph[1].style.display='block';
+              month_graph[i].style.display='none';
+              time_graph[i].style.display='none';
+          }
+        }
+        function displayDiagramAM(){
+          for (var i=0;i<age_graph.length;i+=1){
+              mydiagram.style.display = 'none';
+              mydiagramA.style.display = 'block';
+              mydiagramR.style.display = 'none';
+              month_graph[1].style.display='block';
+              age_graph[i].style.display='none';
+              gender_graph[i].style.display='none';
+              time_graph[i].style.display='none';
+          }
+        }
+
+        function displayDiagramAT(){
+          for (var i=0;i<age_graph.length;i+=1){
+              mydiagram.style.display = 'none';
+              mydiagramA.style.display = 'block';
+              mydiagramR.style.display = 'none';
+              month_graph[1].style.display='none';
+              age_graph[i].style.display='none';
+              gender_graph[i].style.display='none';
+              time_graph[i].style.display='block';
+          }
+        }
+
+        function displayDiagramRA(){
+          for (var i=0;i<age_graph.length;i+=1){
+              mydiagram.style.display = 'none';
+              mydiagramA.style.display = 'none';
+              mydiagramR.style.display = 'block';
+              age_graph[2].style.display='block';
+              gender_graph[i].style.display='none';
+              month_graph[i].style.display='none';
+              time_graph[i].style.display='none';
+          }
+        }
+        function displayDiagramRG(){
+          for (var i=0;i<age_graph.length;i+=1){
+              mydiagram.style.display = 'none';
+              mydiagramA.style.display = 'none';
+              mydiagramR.style.display = 'block';
+              age_graph[i].style.display='none';
+              gender_graph[2].style.display='block';
+              month_graph[i].style.display='none';
+              time_graph[i].style.display='none';
+          }
+        }
+        function displayDiagramRM(){
+          for (var i=0;i<age_graph.length;i+=1){
+              mydiagram.style.display = 'none';
+              mydiagramA.style.display = 'none';
+              mydiagramR.style.display = 'block';
+              month_graph[2].style.display='block';
+              age_graph[i].style.display='none';
+              gender_graph[i].style.display='none';
+              time_graph[i].style.display='none';
+          }
+        }
+
+        function displayDiagramRT(){
+          for (var i=0;i<age_graph.length;i+=1){
+              mydiagram.style.display = 'none';
+              mydiagramA.style.display = 'none';
+              mydiagramR.style.display = 'block';
+              month_graph[2].style.display='none';
+              age_graph[i].style.display='none';
+              gender_graph[i].style.display='none';
+              time_graph[i].style.display='block';
+          }
+        }
+
+        //header scroll
+        /*
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("mainNav").style.top = "0";
+            } else {
+              document.getElementById("mainNav").style.top = "-50px";
+            }
+            prevScrollpos = currentScrollPos;
+      }
+      */
+
+        </script>
+
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container">Sexual Violence in Mexico City</div></footer>
+
+
+    </body>
+</html>

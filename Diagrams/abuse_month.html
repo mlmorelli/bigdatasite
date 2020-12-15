@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.1.1.min.js" integrity="sha384-kLr4fYcqcSpbuI95brIH3vnnYCquzzSxHPU6XGQCIkQRGJwhg0StNbj1eegrHs12" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="2ec1b26b-2038-4a8e-9447-2d5a8fe972c0" data-root-id="1868"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="2075">
+          {"2c2bc1cf-4e91-4efd-ad71-71da73a19967":{"roots":{"references":[{"attributes":{},"id":"1875","type":"LinearScale"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#C049A1"},"line_alpha":{"value":0.1},"line_color":{"value":"white"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"1887","type":"VBar"},{"attributes":{"axis":{"id":"1877"},"grid_line_color":null,"ticker":null},"id":"1879","type":"Grid"},{"attributes":{"text":""},"id":"1891","type":"Title"},{"attributes":{},"id":"1878","type":"CategoricalTicker"},{"attributes":{"data_source":{"id":"1885"},"glyph":{"id":"1886"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1887"},"selection_glyph":null,"view":{"id":"1889"}},"id":"1888","type":"GlyphRenderer"},{"attributes":{"axis_line_color":"white","formatter":{"id":"1893"},"major_label_text_color":"white","major_tick_line_color":"white","minor_tick_line_color":"white","ticker":{"id":"1881"}},"id":"1880","type":"LinearAxis"},{"attributes":{},"id":"1873","type":"CategoricalScale"},{"attributes":{"data":{"top":[458,654,551,372,430,398,410,462,465,493,268,299],"x":["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]},"selected":{"id":"1896"},"selection_policy":{"id":"1897"}},"id":"1885","type":"ColumnDataSource"},{"attributes":{"start":0},"id":"1871","type":"DataRange1d"},{"attributes":{"axis_label":"Month of the crime","axis_label_text_color":"white","axis_line_color":"white","formatter":{"id":"1895"},"major_label_orientation":0.5,"major_label_text_color":"white","major_tick_line_color":"white","minor_tick_line_color":"white","ticker":{"id":"1878"}},"id":"1877","type":"CategoricalAxis"},{"attributes":{"background_fill_color":null,"below":[{"id":"1877"}],"border_fill_color":null,"center":[{"id":"1879"},{"id":"1883"}],"left":[{"id":"1880"}],"plot_height":250,"plot_width":400,"renderers":[{"id":"1888"}],"title":{"id":"1891"},"toolbar":{"id":"1884"},"toolbar_location":null,"x_range":{"id":"1869"},"x_scale":{"id":"1873"},"y_range":{"id":"1871"},"y_scale":{"id":"1875"}},"id":"1868","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"1881","type":"BasicTicker"},{"attributes":{"axis":{"id":"1880"},"dimension":1,"grid_line_color":"grey","ticker":null},"id":"1883","type":"Grid"},{"attributes":{"factors":["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]},"id":"1869","type":"FactorRange"},{"attributes":{},"id":"1895","type":"CategoricalTickFormatter"},{"attributes":{"source":{"id":"1885"}},"id":"1889","type":"CDSView"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto"},"id":"1884","type":"Toolbar"},{"attributes":{},"id":"1896","type":"Selection"},{"attributes":{"fill_color":{"value":"#C049A1"},"line_color":{"value":"white"},"top":{"field":"top"},"width":{"value":0.5},"x":{"field":"x"}},"id":"1886","type":"VBar"},{"attributes":{},"id":"1897","type":"UnionRenderers"},{"attributes":{},"id":"1893","type":"BasicTickFormatter"}],"root_ids":["1868"]},"title":"Bokeh Application","version":"2.1.1"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('2075').textContent;
+                  var render_items = [{"docid":"2c2bc1cf-4e91-4efd-ad71-71da73a19967","root_ids":["1868"],"roots":{"1868":"2ec1b26b-2038-4a8e-9447-2d5a8fe972c0"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

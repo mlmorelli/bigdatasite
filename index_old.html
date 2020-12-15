@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Sexual Violence in Mexico City</title>
+
+
+
+
+
+        <!--Styles-->
+
+        <!-- Mapbox -->
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gentium+Basic&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+
+        <!-- Dropdown -->
+        <style>
+          .collapsible {
+            background-color: #4C4C4C;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            z-index: 1;
+
+          }
+
+          .active, .collapsible:hover {
+            background-color: #555;
+          }
+
+          .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #f1f1f1;
+          }
+        </style>
+
+        <!-- Scripts -->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+
+
+<!--Page -->
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Landing Page</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#map">Explore the Data!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Sexual  <br>  Violence</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Mexico City 2019</h2>
+                  <!--   <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a> -->
+                </div>
+            </div>
+        </header>
+
+
+
+        <!-- Map & Text  -->
+        <section class="about-section"> <!-- TODO: change class to not be named "map" use for map div-->
+            <div class="row">
+                <div class="column"> <!-- TODO: change class -->
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-white mb-4">Background information</h2>
+                        <div>
+                          <!-- Menu -->
+                          <nav id="menu">
+                            <button type="button" class="collapsible">Are women safe in Mexico City?</button>
+                            <div class="content">
+                                <p>In 2017, the Thomas Reuters Foundation published a poll portraying Mexico City as the 4th most dangerous city for women regarding sexual violence, which was defined as “rape or sexual attacks and harassment.” Figures representing violence against women have been increasing since that year. In the first ten months of 2019, 50 feminicides were recorded in Mexico City (Infobae, 2019). On November 25th, the International Day for the Elimination of Violence against Women, almost 3,000 participants marched under the theme “Not One Woman Less” (Ni Una Menos) in demand for the government to address women’s safety as an urgent matter. On February of this year, the feminicides of the 25-year-old Íngrid Escamilla and the 7-year-old Fátima Cecilia Aldrighett, triggered feminist collectives’ –and thousands of women’s –frustration towards how the system is failing to protect them. Daily demonstrations in Mexico City’s most iconic public plazas took place. On March 9th, a day after the International Women’s day, Mexican women took a different approach to their protests by declaring “A Day Without Women.” This demonstration sought to portray how empty Mexico City’s public spaces would look by asking women to stay home for one day. This silent protest elucidates the importance of women’s right to the city –a right which is being hampered by fear due to this pervasive climate of harassment and violence against women. Women in Mexico City are not safe, they are continuously vulnerable to sexual harassment and abuse.
+                                </p>
+                            </div>
+                            <button type="button" class="collapsible">Why is women’s safety important?</button>
+                            <div class="content">
+                                <p>Sexual abuse and harassment is an issue that affects women in a much higher rate than men. Women must live with fear of violence against them. This fear of violence constitutes a constant state of alert not only to the most vicious forms of gendered violence –rape and feminicide –but to the smaller and more subtle modes of harassment which exist in a continuity in space as a woman travels throughout the city. It is the gestures, the catcalls, the pursuing, and the groping of women in public space which makes them feel vulnerable and uncomfortable. Fear of violence obliges women to be wary when using the city, forcing them to avoid certain areas when possible and hindering their right to the city.
+                                Policies and design usually follow findings from aggregated data. In the case of transport, for instance, when data about travel patterns is aggregated, the most common route is commuting. However, if this data is disaggregated, women’s travel patterns are revealed as much more complex than men’s. This is what Inés Sanchez de Madariaga calls ‘mobility of care’, which elucidates the complexity of women’s use of the city, while not only working but also taking care of family members and the household. This is why we need to understand women’s experience of the city and design inclusively for women too. It is only by acknowledging their needs that they will recover their right to the city.
+                                </p>
+                            </div>
+                            <button type="button" class="collapsible">What is the data telling us?</button>
+                            <div class="content">
+                              <p>The data on the map shows the reports in 2019 in the research files of the General Prosecutor of Justice (Fiscalía General de Justicia) of Mexico City. On this year, they received 1799 reports of sexual harassment: 1683 of these were reported by women and 108 by men. They received 7167 reports of sexual abuse: 6330 from women and 782 from men. They received 2252 reports of rape: 2046 from women and 203 from men. The data clearly shows this is an issue that impacts women in a much larger way than men.
+                              Also, the data has revealed that women between 10 and 20 years old are more likely to be victims of sexual harassment. However, the data shows this is an issue that affects women of all ages. In 2019 there were harassment reports from women from the age of 2 to the age of 79; abuse reports  from he age of 1 to the age of 79; and rape reports from the age of  2 to the age of 90 years old.
+                              Regarding whether the assaults occur during daylight or at night time, it is interesting to note how more reports on sexual harassment and abuse indicate the crime occured during day light, however most rape cases took place in the night.
+                              </p>
+                            </div>
+                            <button type="button" class="collapsible">Why does it matter what we count?</button>
+                              <div class="content">
+                                <p>Official data is what informs budget allocations and policies. However, women tend to under report cases of sexual harassment and abuse because the system continues to question the validity of these cases and usually asks the victim to stay in the police office for many hours while being questioned with no psychological support. The process ends up being traumatic too. The system remains chauvinistic and abusive. This is why we encourage you to tell your story on this web page. Share what happened without being questioned. If we generate a database that comes closer to the real cases of abuse in the city, we are hoping government officials will find it harder to question the reality of the problem.
+                                </p>
+                              </div>
+                            <button type="button" class="collapsible">Who is not being counted?</button>
+                              <div class="content">
+                                <p>Every women who does not report does not appear on the map. Every woman who doesn’t trust the system does not show on the map. Every woman who is fearful of reporting does not show on the map. Every woman who cannot spend hours in the police’s office to report a man who tried to touch her on the bus, does not show on the map. We are missing many stories.
+                                </p>
+                              </div>
+                          </nav>
+                        </div>
+                </div>
+            </div>
+            <!-- Map -->
+
+
+            <div class="column" id='map' style='width: 800px; height: 900px; float: right;'> <!-- TODO: match class -->
+              <h2 class="text-white mb-4">Map here</h2>
+
+              <nav id="filter-group" class="filter-group"></nav>
+
+              <script>
+                mapboxgl.accessToken = 'pk.eyJ1IjoieXVqaW5nNiIsImEiOiJja2d2bXd6OXowMXhoMnJxeHowdGU3M291In0.L3hc0wUR2zZBd5HvhyJUiA';
+                var map = new mapboxgl.Map({
+                  container: 'map',
+                  style: 'mapbox://styles/yujing6/cki70w2oy456t1apc0xi4rlj8'
+                });
+
+              </script>
+
+
+              <button class="collapsible">Open Collapsible</button>
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+
+            </div>
+        </section>
+
+        <!-- Dropdown -->
+        <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            }
+          });
+        }
+        </script>
+
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © Your Website 2020</div></footer>
+
+
+    </body>
+</html>
